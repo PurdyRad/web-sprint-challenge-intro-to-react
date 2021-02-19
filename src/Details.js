@@ -4,13 +4,21 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 const StyledDiv = styled.div`
-    color: #acd064;
-    font-size: 115%;
+    color: ${props => props.theme.baseColor};
+    font-size: 135%;
+    text-shadow: 6px 6px 10px #b4003d;
 `;
 
+const StyledDiv2 = styled.div`
+    line-height: 1.5;
+    font-variant: small-caps;
+`;
 
 const StyledP = styled.p`
     margin: 0 50px 0 50px;
+    color: ${props => props.theme.baseColor};
+    text-shadow: 6px 6px 10px #1375ea;
+    font-size: 110%;
 `;
 
 const Details = (props) => {
@@ -37,8 +45,10 @@ const Details = (props) => {
             {
                 details &&
                 <>
+                <StyledDiv2>
                 <StyledP>This beaut is {post.height}cm weighing in at {post.mass}kg</StyledP>
                 <StyledP>They have {post.eye_color} eyes which many believe compliment their {post.skin_color} complexion quite well 🥵 🥴</StyledP>
+                </StyledDiv2>
                 </>
             }
         </div>
